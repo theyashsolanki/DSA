@@ -2,19 +2,18 @@
 const main = (s, t) => {
   if (s.length !== t.length) return false;
   const sCount = {};
-  const tCount = {};
   for (const ch of s) {
     if (!sCount[ch]) sCount[ch] = 1;
     else sCount[ch]++;
   }
   for (const ch of t) {
-    if (!tCount[ch]) tCount[ch] = 1;
-    else tCount[ch]++;
+    if (!sCount[ch]) return false;
+    sCount[ch]--;
   }
   for (const ch of s) {
-    if (sCount[ch] !== tCount[ch]) return false;
+    if (sCount[ch] > 0 || sCount[ch] < 0) return false;
   }
   return true;
 };
 
-console.log(main("a", "ab"));
+console.log(main("ab", "ab"));
