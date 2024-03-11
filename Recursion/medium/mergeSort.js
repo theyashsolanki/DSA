@@ -26,10 +26,10 @@ const merge = (arr, start, mid, end) => {
 };
 
 const mergeSort = (arr, start, end) => {
+  const mid = Math.trunc(start + (end - start) / 2);
   if (start === end) {
     return;
   }
-  const mid = Math.trunc(start + (end - start) / 2);
   mergeSort(arr, start, mid);
   mergeSort(arr, mid + 1, end);
 
