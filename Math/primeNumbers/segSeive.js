@@ -40,7 +40,7 @@ const segSeive = (start, end) => {
 
   for (let i = 2; i < baseSeive.length; i++) {
     if (baseSeive[i]) {
-      let firstMultiple = Math.trunc(start / i) * i;
+      let firstMultiple = Math.trunc(start / i) * i; // we can use the ceil(start / i) * i to skip the next if condition
       if (firstMultiple < start) {
         firstMultiple += i;
       }
